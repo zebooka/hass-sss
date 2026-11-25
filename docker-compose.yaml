@@ -1,0 +1,12 @@
+services:
+  homeassistant:
+    container_name: homeassistant-sss
+    image: "ghcr.io/home-assistant/home-assistant:2024.12"
+    volumes:
+      - ./.hass:/config
+      - ./custom_components/sss:/config/custom_components/sss
+      - ./tests:/tests:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    privileged: true
+    network_mode: host
