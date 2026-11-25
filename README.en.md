@@ -1,6 +1,6 @@
 [English](/README.en.md) | [Русский](/README.md)
 
-# SSS Integration for Home Assistant
+# Saved Snapshot Size Integration for Home Assistant
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5)](https://hacs.xyz)
 [![Release](https://img.shields.io/github/v/release/zebooka/hass-sss?label=release&color=blue)](https://github.com/zebooka/hass-sss/releases/latest)
@@ -18,7 +18,7 @@
 
 1. In HACS, open **⋮ → Custom repositories**.
 2. Add `https://github.com/zebooka/hass-sss` with type **Integration**.
-3. Find **SSS** and install the integration.
+3. Find **Saved Snapshot Size** and install the integration.
 4. Restart Home Assistant.
 5. Add the integration in **Settings → Devices & services**.
 
