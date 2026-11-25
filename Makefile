@@ -34,6 +34,11 @@ sh: ## Go inside HA container
 
 ##@ Development
 
+logo: ## Generate PNG icon assets from SVG (requires ImageMagick)
+	magick -density 192 -background none -define svg:background-color=none assets/icon.svg -resize 256x256 custom_components/sss/brand/icon.png
+	magick -density 192 -background none -define svg:background-color=none assets/icon.svg -resize 512x512 custom_components/sss/brand/icon@2x.png
+	test `uname` = 'Darwin' && /Applications/ImageOptim.app/Contents/MacOS/ImageOptim custom_components/sss/brand/icon.png custom_components/sss/brand/icon@2x.png || true
+
 test: ## Run integration tests in the Home Assistant Docker image
 	docker exec $(HASS) python -m pytest --color=yes -p no:cacheprovider /tests
 

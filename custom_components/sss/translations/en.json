@@ -1,5 +1,10 @@
 {
   "config": {
+    "step": {
+      "user": {
+        "description": "Set up Saved Snapshot Size."
+      }
+    },
     "abort": {
       "already_configured": "The integration is already configured."
     }

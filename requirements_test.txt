@@ -1,3 +1,7 @@
 homeassistant==2024.12.0
+# Camera and stream dependencies from Home Assistant 2024.12.0.
+PyTurboJPEG==1.7.5
+av==13.1.0
+numpy==2.1.3
 pycares==4.5.0
 pytest

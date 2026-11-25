@@ -1,6 +1,9 @@
 {
   "domain": "sss",
   "name": "Saved Snapshot Size",
+  "categories": [
+    "security_safety.cameras"
+  ],
   "codeowners": [
     "@zebooka"
   ],
