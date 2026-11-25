@@ -1,0 +1,20 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "The integration is already configured."
+    }
+  },
+  "services": {
+    "snapshot": {
+      "name": "Save snapshot",
+      "description": "Save a camera snapshot with optional dimensions and timeout.",
+      "fields": {
+        "entity_id": {"name": "Camera", "description": "Camera to capture."},
+        "filename": {"name": "Filename", "description": "Destination path; templates are supported."},
+        "width": {"name": "Width", "description": "Requested image width in pixels."},
+        "height": {"name": "Height", "description": "Requested image height in pixels."},
+        "timeout": {"name": "Timeout", "description": "Maximum time to obtain the image, in seconds."}
+      }
+    }
+  }
+}

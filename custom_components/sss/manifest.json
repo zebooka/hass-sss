@@ -1,0 +1,12 @@
+{
+  "domain": "sss",
+  "name": "Saved Snapshot Size",
+  "codeowners": ["@zebooka"],
+  "config_flow": true,
+  "dependencies": ["camera"],
+  "documentation": "https://github.com/zebooka/hass-sss",
+  "integration_type": "service",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/zebooka/hass-sss/issues",
+  "version": "0.1.0"
+}

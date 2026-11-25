@@ -28,6 +28,24 @@
 2. Restart Home Assistant.
 3. Add the integration in **Settings → Devices & services**.
 
+## The `sss.snapshot` action
+
+After adding the integration, use the action in automations and scripts:
+
+```yaml
+action: sss.snapshot
+data:
+  entity_id: camera.front_door
+  filename: /config/www/front_door.jpg
+  width: 1280
+  height: 720
+  timeout: 15
+```
+
+`entity_id` and `filename` are required. `filename` supports templates, and existing files are overwritten. The destination must be allowed by `allowlist_external_dirs` (the configuration directory is usually allowed). Missing subdirectories are created automatically.
+
+`width`, `height` (pixels), and `timeout` (seconds, default 10) are optional positive integers. Dimensions are passed to the camera integration and may not be honored by every camera or image format. For JPEG images, Home Assistant also attempts to resize when both dimensions are provided. The action accepts one camera per call.
+
 ## Support
 
 Report bugs and suggestions through the [GitHub repository](https://github.com/zebooka/hass-sss).
