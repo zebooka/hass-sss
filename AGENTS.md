@@ -1,24 +1,23 @@
-# Инструкции для агентов
+# Agent Instructions
 
-## Разработка
+## Development
 
-При внесении изменений, которые ломают обратную совместимость, спрашивайте, нужно ли сохранить обратную совместимость или нет.
+When making breaking changes, ask whether backward compatibility should be preserved.
 
-## Тесты
+## Tests
 
-При создании нового функционала, всегда покрывайте его тестами. При внесении изменений в существующий функционал тоже 
-прогоняйте тесты и если какой-то изменяемый функционал не покрыт тестами, то добавляйте их. Не создавай assert для логов.
+Always add tests for new functionality. When changing existing functionality, run the tests and add tests for any changed behavior that is not already covered. Do not assert on logs.
 
-Запуск тестов можно производить при помощи команды `make test`.
+Run the tests using `make test`.
 
 ## CHANGELOG
 
-При внесении изменений в проект обязательно обновляйте `CHANGELOG.md`.
+Always update `CHANGELOG.md` when making changes to the project. Keep both `AGENTS.md` and `CHANGELOG.md` in English.
 
-- Все новые записи добавляйте только в раздел `## В разработке`, если пользователь явно не попросил подготовить конкретный релиз.
-- Если раздела `## В разработке` нет, создайте его перед самым новым разделом версии.
-- Используйте подходящую категорию: `### Добавлено`, `### Изменено` или `### Исправлено`. Сохраняй такой порядок категорий.
-- Описывайте изменение кратко и понятным для пользователя языком.
-- Не добавляйте записи для чисто технических действий без изменения проекта, например для запуска тестов или форматирования без изменений.
-- Перед выпуском версии используйте `make version X.Y.Z`, чтобы переименовать раздел `## В разработке` в раздел версии и обновить `manifest.json`.
-- Не меняйте при рефакторинге CHANGELOG для старых выпущенных версий. Изменения допустимы только в разделе `## В разработке`.
+- Add all new entries only to the `## Unreleased` section unless the user explicitly requests a specific release.
+- If the `## Unreleased` section does not exist, create it before the most recent version section.
+- Use the appropriate category: `### Added`, `### Changed`, or `### Fixed`. Keep them in that order.
+- Describe changes briefly and in language users can understand.
+- Do not add entries for purely technical actions that do not change the project, such as running tests or formatting without changes.
+- Before releasing a version, use `make version X.Y.Z` to rename the `## Unreleased` section to the version heading and update `manifest.json`.
+- Do not modify changelog entries for older released versions during refactoring. Changes are allowed only in the `## Unreleased` section.

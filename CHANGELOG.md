@@ -1,15 +1,22 @@
-# История изменений
+# Changelog
 
-Все существенные изменения этого проекта документируются в этом файле.
+All notable changes to this project are documented in this file.
+
+## Unreleased
+
+### Added
+
+- Released service integration.
+- Added the `sss.snapshot` action to save camera snapshots with optional dimensions and timeout.
 
 ## v0.2.0
 
-### Исправлено
+### Fixed
 
-- Добавлены значок и сведения об интеграции для корректного отображения в Home Assistant и HACS.
+- Added an icon and integration information for correct display in Home Assistant and HACS.
 
 ## v0.1.0
 
-### Добавлено
+### Added
 
-- Действие `sss.snapshot` для сохранения снимка камеры с необязательными размерами и тайм-аутом.
+- Added the `sss.snapshot` action to save camera snapshots with optional dimensions and timeout.

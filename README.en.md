@@ -10,9 +10,21 @@
 [![Sponsor on Cloudtips](https://img.shields.io/badge/donate-cloudtips-FFDD2D.svg)](https://pay.cloudtips.ru/p/34ce579c)
 [![Русский язык](https://img.shields.io/badge/Russian%20language-ДА-red)](https://en.wikipedia.org/wiki/Alexander_Pushkin)
 
+<img src="https://github.com/zebooka/hass-sss/blob/master/custom_components/sss/brand/icon@2x.png?raw=true" alt="Saved Snapshot Size" width="128"/>
+
+An integration that addresses video snapshot size in automations.
+
+The standard Home Assistant `camera.snapshot` action does not offer a choice of snapshot size. The image size is selected automatically based on the video stream. Some streams offer multiple sizes, but cameras cannot always be configured, for example when a camera is provided by a third-party integration. This integration lets you request image dimensions when calling `async_get_image`.
+
 ## Installation
 
+### Marketplace or HACS (recommended)
+
 [![Open your Home Assistant instance and show the repository in the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zebooka&repository=hass-sss&category=integration)
+
+1. Open Settings → **Marketplace** (for Home Assistant 2026.11+) or **HACS** and search for **Saved Snapshot Size** (or use the button above).
+2. Open **Saved Snapshot Size**, select **Download**, and confirm.
+3. Restart Home Assistant, then add the integration under **Settings → Devices & services**.
 
 ### HACS: Custom repository
 
