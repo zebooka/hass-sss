@@ -15,5 +15,5 @@
   "integration_type": "service",
   "iot_class": "calculated",
   "issue_tracker": "https://github.com/zebooka/hass-sss/issues",
-  "version": "0.2.0"
+  "version": "1.0.0"
 }
