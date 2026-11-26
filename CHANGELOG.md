@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## Unreleased
+
+### Fixed
+
+- Fixed integration name in HACS.
+- Removed the HACS country restriction so the integration can be discovered worldwide.
+
 ## v1.0.0
 
 ### Added

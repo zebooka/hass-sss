@@ -1,7 +1,6 @@
 {
-  "name": "SSS",
+  "name": "Saved Snapshot Size",
   "content_in_root": false,
-  "country": "RU",
   "homeassistant": "2024.12.0",
   "render_readme": true
 }
