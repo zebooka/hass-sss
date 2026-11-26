@@ -1,48 +1,48 @@
-[English](/README.en.md) | [Русский](/README.md)
+[English](/README.md) | [Русский](/README.ru.md)
 
-# Интеграция Saved Snapshot Size для Home Assistant
+# Saved Snapshot Size Integration for Home Assistant
 
 [![HACS Custom](https://img.shields.io/badge/HACS-Custom-41BDF5)](https://hacs.xyz)
-[![Release](https://img.shields.io/github/v/release/zebooka/hass-sss?label=release&color=blue)](https://github.com/zebooka/hass-zkhnso/releases/latest)
+[![Release](https://img.shields.io/github/v/release/zebooka/hass-sss?label=release&color=blue)](https://github.com/zebooka/hass-sss/releases/latest)
 ![Home Assistant](https://img.shields.io/badge/Home%20Assistant-2024.12%2B-blue?logo=home-assistant)
-[![License](https://img.shields.io/github/license/zebooka/hass-sss?color=green)](https://github.com/zebooka/hass-zkhnso/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/zebooka/hass-sss?color=green)](https://github.com/zebooka/hass-sss/blob/master/LICENSE)
 ![Custom Integration](https://img.shields.io/badge/Custom%20Integration-orange)
-[![Спонсировать на Cloudtips](https://img.shields.io/badge/donate-cloudtips-FFDD2D.svg)](https://pay.cloudtips.ru/p/34ce579c)
-[![Русский язык](https://img.shields.io/badge/Русский%20язык-ДА-red)](https://ru.wikipedia.org/wiki/%D0%9F%D1%83%D1%88%D0%BA%D0%B8%D0%BD,_%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B5%D0%B2%D0%B8%D1%87)
+[![Sponsor on Cloudtips](https://img.shields.io/badge/donate-cloudtips-FFDD2D.svg)](https://pay.cloudtips.ru/p/34ce579c)
+[![Русский язык](https://img.shields.io/badge/Russian%20language-ДА-red)](https://en.wikipedia.org/wiki/Alexander_Pushkin)
 
 <img src="https://github.com/zebooka/hass-sss/blob/master/custom_components/sss/brand/icon@2x.png?raw=true" alt="Saved Snapshot Size" width="128"/>
 
-Интеграция, решающая проблему с размером стопкадра видеопотока в автоматизациях. 
+An integration that addresses video snapshot size in automations.
 
-В стандартном Home Assistant отсутствует выбор размера снимка при вызове действия `camera.snapshot`. Размер изображения выбирается автоматически, исходя из параметров видеопотока. Однако некоторые видеопотоки имеют несколько вариантов разных размеров и не всегда камеры возможно настраивать. Например, если устройство камеры предоставляется сторонней интеграцией. Эта интеграция позволяет жестко задать требуемые размеры изображения при вызове функции `async_get_image`.
+The standard Home Assistant `camera.snapshot` action does not offer a choice of snapshot size. The image size is selected automatically based on the video stream. Some streams offer multiple sizes, but cameras cannot always be configured, for example when a camera is provided by a third-party integration. This integration lets you request image dimensions when calling `async_get_image`.
 
-## Установка
+## Installation
 
-### Marketplace или HACS (рекомендуется)
+### Marketplace or HACS (recommended)
 
-[![Откройте свой экземпляр Home Assistant и перейдите к репозиторию в магазине Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zebooka&repository=hass-sss&category=integration)
+[![Open your Home Assistant instance and show the repository in the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zebooka&repository=hass-sss&category=integration)
 
-1. Откройте Настройки → **Marketplace** (для Home Assistant 2026.11+) или **HACS** и выполните поиск **Saved Snapshot Size** (или воспользуйтесь кнопкой выше).
-2. Откройте **Saved Snapshot Size**, выберите **Скачать** (Download) и подтвердите действие.
-3. Перезапустите Home Assistant, а затем добавьте интеграцию через **Настройки → Устройства и службы**.
+1. Open Settings → **Marketplace** (for Home Assistant 2026.11+) or **HACS** and search for **Saved Snapshot Size** (or use the button above).
+2. Open **Saved Snapshot Size**, select **Download**, and confirm.
+3. Restart Home Assistant, then add the integration under **Settings → Devices & services**.
 
-### HACS: пользовательский репозиторий
+### HACS: Custom repository
 
-1. В HACS откройте **⋮ → Пользовательские репозитории**.
-2. Добавьте `https://github.com/zebooka/hass-sss` с типом **Integration**.
-3. Найдите **Saved Snapshot Size** и установите интеграцию.
-4. Перезапустите Home Assistant.
-5. Добавьте интеграцию через **Настройки → Устройства и службы**.
+1. In HACS, open **⋮ → Custom repositories**.
+2. Add `https://github.com/zebooka/hass-sss` with type **Integration**.
+3. Find **Saved Snapshot Size** and install the integration.
+4. Restart Home Assistant.
+5. Add the integration in **Settings → Devices & services**.
 
-### Ручная установка
+### Manual installation
 
-1. Скопируйте папку `sss` в папку `custom_components` в вашем Home Assistant.
-2. Перезапустите Home Assistant.
-3. Добавьте интеграцию через **Настройки → Устройства и службы**.
+1. Copy the `sss` directory to your Home Assistant `custom_components` directory.
+2. Restart Home Assistant.
+3. Add the integration in **Settings → Devices & services**.
 
-## Действие `sss.snapshot`
+## The `sss.snapshot` action
 
-После добавления интеграции используйте действие в автоматизациях и скриптах:
+After adding the integration, use the action in automations and scripts:
 
 ```yaml
 action: sss.snapshot
@@ -54,14 +54,14 @@ data:
   timeout: 15
 ```
 
-`entity_id` и `filename` обязательны. `filename` поддерживает шаблоны, а файл при повторном вызове перезаписывается. Каталог назначения должен быть разрешён в `allowlist_external_dirs` (папка конфигурации обычно разрешена). Подкаталоги создаются автоматически.
+`entity_id` and `filename` are required. `filename` supports templates, and existing files are overwritten. The destination must be allowed by `allowlist_external_dirs` (the configuration directory is usually allowed). Missing subdirectories are created automatically.
 
-`width`, `height` (пиксели) и `timeout` (секунды, по умолчанию 10) необязательны и должны быть положительными целыми числами. Размер передаётся интеграции камеры; его соблюдение зависит от камеры и формата снимка. Для JPEG Home Assistant также пытается изменить размер, когда указаны обе стороны. Действие принимает одну камеру за вызов.
+`width`, `height` (pixels), and `timeout` (seconds, default 10) are optional positive integers. Dimensions are passed to the camera integration and may not be honored by every camera or image format. For JPEG images, Home Assistant also attempts to resize when both dimensions are provided. The action accepts one camera per call.
 
-## Поддержка
+## Support
 
-Отчёты об ошибках и предложения, направляйте через [репозиторий на GitHub](https://github.com/zebooka/hass-sss).
+Report bugs and suggestions through the [GitHub repository](https://github.com/zebooka/hass-sss).
 
-## Лицензия
+## License
 
-Этот проект распространяется под открытой лицензией MIT.
+This project is distributed under the MIT License.
