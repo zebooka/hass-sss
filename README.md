@@ -22,7 +22,7 @@ The standard Home Assistant `camera.snapshot` action does not offer a choice of 
 
 [![Open your Home Assistant instance and show the repository in the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zebooka&repository=hass-sss&category=integration)
 
-1. Open Settings → **Marketplace** (for Home Assistant 2026.11+) or **HACS** and search for **Saved Snapshot Size** (or use the button above).
+1. Open **Settings → Marketplace** (for Home Assistant 2026.11+) or **HACS** and search for **Saved Snapshot Size** (or use the button above).
 2. Open **Saved Snapshot Size**, select **Download**, and confirm.
 3. Restart Home Assistant, then add the integration under **Settings → Devices & services**.
 
@@ -48,13 +48,13 @@ After adding the integration, use the action in automations and scripts:
 action: sss.snapshot
 data:
   entity_id: camera.front_door
-  filename: /config/www/front_door.jpg
+  filename: /config/snapshots/front_door.jpg
   width: 1280
   height: 720
   timeout: 15
 ```
 
-`entity_id` and `filename` are required. `filename` supports templates, and existing files are overwritten. The destination must be allowed by `allowlist_external_dirs` (the configuration directory is usually allowed). Missing subdirectories are created automatically.
+`entity_id` and `filename` are required. `filename` supports templates, and existing files are overwritten. The destination must be allowed by `allowlist_external_dirs` (the configuration directory is usually allowed). Missing subdirectories are created automatically. Files under `/config/www` directory can be read by anyone who can reach the instance. 
 
 `width`, `height` (pixels), and `timeout` (seconds, default 10) are optional positive integers. Dimensions are passed to the camera integration and may not be honored by every camera or image format. For JPEG images, Home Assistant also attempts to resize when both dimensions are provided. The action accepts one camera per call.
 

@@ -22,7 +22,7 @@
 
 [![Откройте свой экземпляр Home Assistant и перейдите к репозиторию в магазине Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=zebooka&repository=hass-sss&category=integration)
 
-1. Откройте Настройки → **Marketplace** (для Home Assistant 2026.11+) или **HACS** и выполните поиск **Saved Snapshot Size** (или воспользуйтесь кнопкой выше).
+1. Откройте **Настройки → Marketplace** (для Home Assistant 2026.11+) или **HACS** и выполните поиск **Saved Snapshot Size** (или воспользуйтесь кнопкой выше).
 2. Откройте **Saved Snapshot Size**, выберите **Скачать** (Download) и подтвердите действие.
 3. Перезапустите Home Assistant, а затем добавьте интеграцию через **Настройки → Устройства и службы**.
 
@@ -48,13 +48,13 @@
 action: sss.snapshot
 data:
   entity_id: camera.front_door
-  filename: /config/www/front_door.jpg
+  filename: /config/snapshots/front_door.jpg
   width: 1280
   height: 720
   timeout: 15
 ```
 
-`entity_id` и `filename` обязательны. `filename` поддерживает шаблоны, а файл при повторном вызове перезаписывается. Каталог назначения должен быть разрешён в `allowlist_external_dirs` (папка конфигурации обычно разрешена). Подкаталоги создаются автоматически.
+`entity_id` и `filename` обязательны. `filename` поддерживает шаблоны, а файл при повторном вызове перезаписывается. Каталог назначения должен быть разрешён в `allowlist_external_dirs` (папка конфигурации обычно разрешена). Подкаталоги создаются автоматически. Файлы в директории `/config/www` могут быть прочитаны всеми, кто имеет доступ к сайту умного дома.
 
 `width`, `height` (пиксели) и `timeout` (секунды, по умолчанию 10) необязательны и должны быть положительными целыми числами. Размер передаётся интеграции камеры; его соблюдение зависит от камеры и формата снимка. Для JPEG Home Assistant также пытается изменить размер, когда указаны обе стороны. Действие принимает одну камеру за вызов.
 
